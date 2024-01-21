@@ -1,0 +1,84 @@
+:root {
+	--bg-color: rgb(40, 40, 70);
+	--text-color: beige;
+	--dark-accent-color: rgb(13, 13, 26);
+	--dark-red: rgb(95, 0, 0);
+	--darker-red: rgb(31, 0, 0);
+	--dark-green: rgb(0, 63, 0);
+	--darker-green: rgb(0, 21, 0);
+}
+
+nav {
+	background-color: var(--dark-accent-color);
+	width: 100%;
+}
+
+body {
+	background-color: rgb(40, 40, 70);
+}
+
+button {
+	cursor: pointer;
+	font-family: Poppins, Arial, Helvetica, sans-serif;
+	color: beige;
+	border-color: beige;
+	border-radius: 5px;
+	border-style: solid;
+	background-color: var(--bg-color);
+	transition: border-color 0.25s ease;
+}
+
+button:hover {
+	border-color: var(--dark-accent-color);
+}
+
+button.delete {
+	background-color: var(--dark-red);
+}
+
+button.delete:hover {
+	border-color: var(--darker-red);
+}
+
+button.confirm {
+	background-color: var(--dark-green);
+}
+
+button.confirm:hover {
+	border-color: var(--darker-green);
+}
+
+h1,
+h2,
+h3,
+p,
+label,
+nav a {
+	font-family: Poppins, Arial, Helvetica, sans-serif;
+	color: var(--text-color);
+}
+
+input[type='number'],
+input[type='text'],
+input[type='date'],
+input[type='email'],
+input[type='password'],
+textarea {
+	background-color: var(--bg-color);
+	border-style: solid;
+	border-width: 2px;
+	border-radius: 6px;
+	border-color: var(--text-color);
+	border-image: auto;
+	resize: none;
+	color: var(--text-color);
+	font-family: Poppins, Arial, Helvetica, sans-serif;
+	transition: border-color 0.25s ease;
+}
+
+input[type='number']:hover,
+input[type='text']:hover,
+input[type='date']:hover,
+textarea:hover {
+	border-color: var(--dark-accent-color);
+}
