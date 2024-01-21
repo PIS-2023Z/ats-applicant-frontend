@@ -1,3 +1,18 @@
+<script lang="ts">
+	import { afterNavigate, goto } from '$app/navigation';
+	import { base } from '$app/paths';
+
+	let previous_page: string = base;
+
+	afterNavigate(({ from }) => {
+		previous_page = from?.url.pathname ?? previous_page;
+	});
+
+	const back = () => {
+		goto(previous_page);
+	};
+</script>
+
 <form method="post">
 	<div class="form">
 		<label for="email">Email:</label>
@@ -6,7 +21,7 @@
 		<input name="password" type="password" required />
 	</div>
 	<div class="buttons">
-		<button type="button">Back...</button>
+		<button type="button" on:click={back}>Back...</button>
 		<button type="submit" class="confirm">Login</button>
 	</div>
 </form>

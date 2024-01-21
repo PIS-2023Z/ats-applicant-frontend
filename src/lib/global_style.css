@@ -8,9 +8,8 @@
 	--darker-green: rgb(0, 21, 0);
 }
 
-nav {
+header {
 	background-color: var(--dark-accent-color);
-	width: 100%;
 }
 
 body {

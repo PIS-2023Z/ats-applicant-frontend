@@ -10,5 +10,4 @@
 			<Offer />
 		</div>
 	{/each}
-	<!-- TODO: offers -->
 </div>
