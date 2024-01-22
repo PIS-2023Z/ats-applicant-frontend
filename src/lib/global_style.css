@@ -1,5 +1,6 @@
 :root {
 	--bg-color: rgb(40, 40, 70);
+	--light-blue: rgb(96, 96, 173);
 	--text-color: beige;
 	--dark-accent-color: rgb(13, 13, 26);
 	--dark-red: rgb(95, 0, 0);
@@ -28,7 +29,7 @@ button {
 }
 
 button:hover {
-	border-color: var(--dark-accent-color);
+	border-color: var(--light-blue);
 }
 
 button.delete {
@@ -52,9 +53,16 @@ h2,
 h3,
 p,
 label,
-nav a {
+nav a,
+p a {
 	font-family: Poppins, Arial, Helvetica, sans-serif;
 	color: var(--text-color);
+	transition: color 0.25s ease;
+}
+
+p a:hover,
+nav a:hover {
+	color: var(--light-blue);
 }
 
 input[type='number'],
@@ -62,6 +70,7 @@ input[type='text'],
 input[type='date'],
 input[type='email'],
 input[type='password'],
+input[type='tel'],
 textarea {
 	background-color: var(--bg-color);
 	border-style: solid;
@@ -78,6 +87,9 @@ textarea {
 input[type='number']:hover,
 input[type='text']:hover,
 input[type='date']:hover,
+input[type='email']:hover,
+input[type='password']:hover,
+input[type='tel']:hover,
 textarea:hover {
-	border-color: var(--dark-accent-color);
+	border-color: var(--light-blue);
 }

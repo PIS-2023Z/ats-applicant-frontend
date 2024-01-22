@@ -1,36 +1,24 @@
 <script lang="ts">
-	import { afterNavigate, goto } from '$app/navigation';
-
-	let previous_page: string = '/';
-
-	afterNavigate(({ from }) => {
-		previous_page = from?.url.pathname ?? previous_page;
-	});
+	import { goto } from '$app/navigation';
 
 	const back = () => {
-		goto('/');
-	};
-	const create_account = () => {
-		goto('/create_account');
+		goto('/login');
 	};
 </script>
 
-<h1>Log in:</h1>
+<h1>Create account:</h1>
 <form method="post">
 	<div class="form">
 		<label for="email">Email:</label>
 		<input name="email" type="email" required />
+		<label for="phone">Phone number:</label>
+		<input name="phone" type="tel" required />
 		<label for="password">Password:</label>
 		<input name="password" type="password" required />
 	</div>
-
-	<p>
-		No account? <a class="create_link" href="/create_account">Create one.</a>
-	</p>
-
 	<div>
 		<button type="button" on:click={back}>Back...</button>
-		<button type="submit" class="confirm">Login</button>
+		<button type="submit" class="confirm">Create</button>
 	</div>
 </form>
 
@@ -44,9 +32,11 @@
 	}
 	label {
 		grid-column: 1/3;
-		max-width: 60px;
+		max-width: 150px;
 	}
 	input {
+		/* float: right;
+		width: calc(100% - 200px); */
 		grid-column: 3/6;
 	}
 </style>
