@@ -71,6 +71,7 @@ input[type='date'],
 input[type='email'],
 input[type='password'],
 input[type='tel'],
+/* input[type='file'], */
 textarea {
 	background-color: var(--bg-color);
 	border-style: solid;
@@ -79,6 +80,12 @@ textarea {
 	border-color: var(--text-color);
 	border-image: auto;
 	resize: none;
+	color: var(--text-color);
+	font-family: Poppins, Arial, Helvetica, sans-serif;
+	transition: border-color 0.25s ease;
+}
+
+input[type='file'] {
 	color: var(--text-color);
 	font-family: Poppins, Arial, Helvetica, sans-serif;
 	transition: border-color 0.25s ease;

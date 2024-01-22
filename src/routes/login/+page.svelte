@@ -10,9 +10,6 @@
 	const back = () => {
 		goto('/');
 	};
-	const create_account = () => {
-		goto('/create_account');
-	};
 </script>
 
 <h1>Log in:</h1>

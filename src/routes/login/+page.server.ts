@@ -1,4 +1,6 @@
 import { BACKEND_BASE_URL } from '$env/static/private';
+import { AccountRole } from '$lib';
+import type { AccountData } from '$lib/types';
 import { error, redirect, type Actions } from '@sveltejs/kit';
 
 export const actions: Actions = {
@@ -16,10 +18,16 @@ export const actions: Actions = {
 		if (response.status === 400) {
 			error(400, "given account doesn't exist");
 		}
+		const text = await response.text();
+		const account_data = JSON.parse(text) as AccountData;
+		console.log(account_data.accountRole);
+		if ((account_data.accountRole as AccountRole) !== AccountRole.EMPLOYEE) {
+			error(400, "given account doesn't exist");
+		}
 		const token = response.headers.get('token')!;
-		console.log(response.status);
-		cookies.set('email', email, { path: '/' });
-		cookies.set('token', token, { path: '/' });
+		console.log(text);
+		cookies.set('applicant_email', email, { path: '/' });
+		cookies.set('applicant_token', token, { path: '/' });
 		redirect(302, '/');
 	}
 };

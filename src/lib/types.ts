@@ -1,4 +1,4 @@
-import type { JobStatus } from '$lib';
+import type { AccountRole, JobStatus } from '$lib';
 
 export type ApiOffer = {
 	id: number;
@@ -11,3 +11,18 @@ export type ApiOffer = {
 };
 
 export type ApiOfferResponse = Array<ApiOffer>;
+export type AccountData = {
+	id: number;
+	email: string;
+	password: string;
+	phone: string;
+	locked: boolean;
+	enabled: boolean;
+	accountRole: AccountRole;
+	// These fields are only used on the backend side.
+	// username: string,
+	// authorities: null,
+	// accountNonExpired: boolean,
+	// accountNonLocked: boolean,
+	// credentialsNonExpired: boolean,
+};

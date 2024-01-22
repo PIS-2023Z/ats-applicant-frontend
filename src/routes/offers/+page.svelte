@@ -1,13 +1,24 @@
 <script lang="ts">
 	import Offer from '$lib/Offer.svelte';
-	let data = [1, 2, 3];
+	export let data;
 </script>
 
-<h1>Offers</h1>
-<div>
-	{#each data as offer}
-		<div class="offer_div">
-			<Offer />
-		</div>
-	{/each}
-</div>
+{#if data.logged_in}
+	<h1>Offers</h1>
+	<div>
+		{#each data.data as offer (offer.id)}
+			<div class="offer_div">
+				<Offer {offer} />
+			</div>
+		{/each}
+	</div>
+{:else}
+	<h1>Log in to browse offers.</h1>
+{/if}
+
+<style>
+	.offer_div {
+		margin-bottom: 20px;
+		margin-top: 20px;
+	}
+</style>
