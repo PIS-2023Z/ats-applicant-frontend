@@ -21,7 +21,7 @@ export const load: PageServerLoad = async ({ cookies, url }) => {
 			const data = parse_offer_list(text);
 			return { data };
 		} else {
-			const response = await fetch(`${BACKEND_BASE_URL}/api/offer/get-offers-by-fraze/${query}`, {
+			const response = await fetch(`${BACKEND_BASE_URL}/api/offer/get-by-fraze?word=${query}`, {
 				method: 'GET',
 				headers: { Authorization: `Bearer ${token}` }
 			});

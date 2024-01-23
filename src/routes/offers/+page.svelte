@@ -13,13 +13,17 @@
 			<button>Search</button>
 		</form>
 	</div>
-	<div>
-		{#each data.data as offer (offer.id)}
-			<div class="offer_div">
-				<Offer {offer} />
-			</div>
-		{/each}
-	</div>
+	{#if data.data.length === 0}
+		<p>No offers found.</p>
+	{:else}
+		<div>
+			{#each data.data as offer (offer.id)}
+				<div class="offer_div">
+					<Offer {offer} />
+				</div>
+			{/each}
+		</div>
+	{/if}
 {:else}
 	<h1>Log in to browse offers.</h1>
 {/if}
