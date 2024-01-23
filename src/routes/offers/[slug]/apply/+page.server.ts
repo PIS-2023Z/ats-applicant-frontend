@@ -10,12 +10,16 @@ export const actions: Actions = {
 	default: async ({ request, params, cookies }) => {
 		const token = cookies.get('applicant_token')!;
 		const data = await request.formData();
+		data.forEach((value, key) => {
+			console.log(`${key}: ${value}`);
+		});
 		const id = params.slug!;
 		console.log({ id });
 		let result = await fetch(`${BACKEND_BASE_URL}/api/application/apply/${id}`, {
 			method: 'POST',
 			headers: {
 				Authorization: `Bearer ${token}`
+				// 'Content-Type': "multipart/form-data"
 			},
 			body: data
 		});

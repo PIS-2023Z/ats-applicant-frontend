@@ -7,7 +7,7 @@
 	};
 </script>
 
-<form method="post">
+<form method="post" enctype="multipart/form-data">
 	<div class="form">
 		<label for="cv">CV file (.pdf):</label>
 		<input id="cv" type="file" accept=".pdf" name="cv" required />
